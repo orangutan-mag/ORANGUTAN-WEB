@@ -1,0 +1,76 @@
+/*ORANGUTAN MAG, Issue 1. (c)d duan @speculative.hybridity 2025*/
+/* global stylesheet */
+
+
+/* global colours */
+:root {
+    --orange-base: #ff5e00;
+    --orange-tint: #ff5e0010;
+
+    --background-base: #ffffff;
+    --overlay-base: #eeeeeed3;
+
+    --link-base: #0059ff;
+    --link-hover: var(--orange-base);
+
+    --font-h1: #000000;
+}
+
+
+/* smooth scrolling for section hrefs*/
+html {
+    scroll-behavior: smooth;
+}
+
+
+/**/
+h1 {
+    color: var(--font-h1);
+    text-align: center;
+}
+
+p {
+    font-size: 18px;
+    text-align: center;
+}
+
+nav {
+    text-align: center;
+    padding: 10px;
+}
+
+
+body {
+    background-color: var(--background-base);
+    font-family: Arial, sans-serif;
+    font-size: 20px;
+}
+
+
+/* hyperlinks */
+a {
+    color: var(--link-base);
+    text-decoration: none;
+    margin: 0 10px;
+}
+a:hover{
+    color: var(--link-hover);
+}
+/*nav a {
+    color: white;
+    margin: 0 15px;
+    text-decoration: none;
+}
+*/
+
+section {
+    padding: 50px 20px;
+    min-height: 30vh; /* Full screen height for each */
+}
+
+
+@media only screen and (max-width: 768px) {
+    body {
+        font-size: 5px;
+    }
+}
