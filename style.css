@@ -2,24 +2,33 @@
 /* global stylesheet */
 
 
-/* global colours */
+/* global variables */
 :root {
-    --orange-base: #ff5e00;
+    /* COLOURS */
+    --orange: #ff5e00;
     --orange-tint: #ff5e0010;
+    --white: #ffffff;
+    --sheer-grey: #eeeeeed3;
+    --ultramarine: #0059ff;
 
-    --background-base: #ffffff;
-    --overlay-base: #eeeeeed3;
-
-    --link-base: #0059ff;
-    --link-hover: var(--orange-base);
-
+    /* TYPE */
     --font-h1: #000000;
+
+    /* WIREFRAMING */
+    --test-border: 0.5px dotted #757575;
 }
 
 
 /* smooth scrolling for section hrefs*/
 html {
     scroll-behavior: smooth;
+}
+
+
+body {
+    background-color: var(--white);
+    font-family: Arial, sans-serif;
+    font-size: 25px;
 }
 
 
@@ -39,22 +48,13 @@ nav {
     padding: 10px;
 }
 
-
-body {
-    background-color: var(--background-base);
-    font-family: Arial, sans-serif;
-    font-size: 20px;
-}
-
-
 /* hyperlinks */
 a {
-    color: var(--link-base);
+    color: var(--ultramarine);
     text-decoration: none;
-    margin: 0 10px;
 }
-a:hover{
-    color: var(--link-hover);
+a:hover {
+    color: var(--orange);
 }
 /*nav a {
     color: white;
@@ -71,6 +71,6 @@ section {
 
 @media only screen and (max-width: 768px) {
     body {
-        font-size: 5px;
+        
     }
 }

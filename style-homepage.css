@@ -1,135 +1,120 @@
 /*ORANGUTAN MAG, Issue 1. (c)d duan @speculative.hybridity 2025*/
 /* styling for home.html */
 
-
+/*                                                      BACKGROUND*/
 .home-page {
     z-index: -1;
-    min-height: 100vh; /* Matches body */
     background-image: url('imgs/home_bg.jpg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
     background-repeat: no-repeat;
 }
-
-.home-page::before {
+.home-page::before {    /* orange tint overlay */
     z-index: 0; 
+    content: '';
+    width: 100%;
+    height: 100%;
+    background: var(--orange-tint);
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
-    content: '';
-    background: var(--orange-tint);
 }
-
-.home-overlay{
+/*                                                      CONTENT OVERLAY*/
+.content-overlay {   /* background colour */
     z-index: 1;
-    width: 600px;
-    height: 400px;
-    background-color: var(--overlay-base);
-    border-radius: 10px;
     position: fixed;
+    width: 55%;
+    min-width: 500px;
+    height: 400px;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
 
-.home-overlay > .grid-container{
+.content-overlay > .grid-container {
     display: grid;
-    overflow: visible;
-    grid-template-areas:
-      'header header header header header header'
-      'menu main main main main sidebar'
-      'footer footer footer footer footer footer';
-    grid-template-rows: 100px auto 100px;
-    grid-template-columns: repeat(6, 1fr); /* Equal columns */
-    gap: 0px;
-    background-color: white;
-    padding: 0px;
     width: 100%; /* Fill parent width */
     height: 100%; /* Fill parent height */
-    box-sizing: border-box; /* Ensures padding doesn’t add extra size beyond defined overlay size */
+    background-color: var(--sheer-grey);
+    border-radius: 10px;
+    
+    grid-template-rows: 69px auto 1fr auto;
+    padding: 5px;
+    gap: 0px;
+    box-sizing: border-box; /* ensures padding doesn’t add extra size beyond defined overlay size */
 }
-.grid-container > div{
+/*.grid-container > div {
     text-align: center;
     padding: 10px;
-    font-size: 16px;overflow: auto; /* Scroll if content overflows */
+    font-size: 16px;
+    overflow: auto; 
     overflow: auto;
-  }
-
-.item1 {
-    grid-area: header;
-    text-align: center;
-    background-color: purple;
+}*/
+/*                                                      HEADER*/
+.grid-container > header {
+    border: var(--test-border);
+    grid-row: 1;
+    margin: auto;   /*horizontal and vertical centre*/
+    font-size: 1.5em;
+}
+/*                                                      SUBHEADER*/
+.grid-container > subheader {
+    grid-row: 2;
+    text-align: left;
+    font-size: 0.5em;
+    margin-top: 20px;
+    display: flex;
+}
+.grid-container > subheader > div:nth-of-type(1) {
+    max-width: 100px;
+}
+.grid-container > subheader > div {
+    flex: 1;
+    border: var(--test-border);
+}
+/*                                                      CONTENT*/
+.grid-container > content {
+    grid-row: 3;
+    text-align: left;
+    font-size: .8em;
+    line-height: 3em;
+    display: flex;
+}
+.grid-container > content > div:nth-of-type(1) {
+    max-width: 100px;
+}
+.grid-container > content > div {
+    flex: 1;
+    flex-flow: column wrap;
+    border: var(--test-border);
+}
+/*                                                      FOOTER*/
+.grid-container > footer {
+    grid-row: 4;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+}
+.grid-container > footer > label {
+    font-size: 0.4em;
+    padding-left: 40px;
+    padding-right: 12px;
+    margin: auto;
+}
+.grid-container > footer > input {
+    font-size: 0.4em;
+}
+.grid-container > footer > button {
+    font-size: 0.4em;
+    margin-left: 12px;
+    margin-right: 50px;
 }
 
-.item1 > h1 {
-    font-size: 20px;
-}
 
-.item2 {
-    grid-area: menu;
-}
-
-.item2 ul {
-    list-style-type: none;
-    margin: 0px;
-    padding: 0;
-}
-
-.item2 li {
-    padding: 8px;
-    margin-bottom: 7px;
-    background-color: #33b5e5;
-    color: #aeaeae;
-}
-
-.item2 li:hover {
-    background-color: #0099cc;
-}
-
-.item3 {
-    grid-area: main;
-}
-
-.item3 > h1 {
-    font-size: 30px;
-    margin-bottom: 7px;
-}
-
-.item3 > p {
-    margin-bottom: 7px;
-}
-
-.item4 {
-    grid-area: sidebar;
-    border: 2px solid #0099cc;
-    background-color: white;
-    padding: 15px;
-    color: #000000;
-}
-
-.item4 > h2 {
-    font-size: 20px;
-    padding-bottom: 10px;
-}
-
-.item4 li {
-    padding: 5px;
-    margin-bottom: 5px;
-}
-
-.item5 {
-    grid-area: footer;
-    background-color: #0099cc;
-    color: #ffffff;
-    text-align: center;
-}
 
 @media only screen and (max-width: 768px) {
     body {
-        font-size: 5px;
+        
     }
     .homepage {
         background-size: contain;
