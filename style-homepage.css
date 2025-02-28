@@ -1,10 +1,16 @@
 /*ORANGUTAN MAG, Issue 1. (c)d duan @speculative.hybridity 2025*/
 /* styling for home.html */
 
+a {
+    text-decoration: underline;
+}
+
+
+
 /*                                                      BACKGROUND*/
 .home-page {
     z-index: -1;
-    background-image: url('imgs/home_bg.jpg');
+    background-image: url('imgs/home_bg2.jpg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -20,12 +26,31 @@
     top: 0;
     left: 0;
 }
+/*                                                      BACKGROUND*/
+banner {
+    position: fixed;
+    width: 100%;
+    left: 0;
+    top: 0;
+    font-size: 0.6em;
+    text-align: center;
+    padding: 1em;
+    box-sizing: border-box; /* ensure that padding is included in size calculation */
+    color: var(--white);
+    background-color: var(--paleblue);
+    display: flex;  /* flex boxing to centre text. */
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: center;
+    display: inline; /* make sure that when text wrapped due to small screen, there is no line break. */
+}
 /*                                                      CONTENT OVERLAY*/
 .content-overlay {   /* background colour */
     z-index: 1;
     position: fixed;
     width: 55%;
     min-width: 500px;
+    max-width: 690px;
     height: 400px;
     top: 50%;
     left: 50%;
@@ -39,7 +64,7 @@
     background-color: var(--sheer-grey);
     border-radius: 10px;
     
-    grid-template-rows: 69px auto 1fr auto;
+    grid-template-rows: 88px auto 1fr auto;
     padding: 5px;
     gap: 0px;
     box-sizing: border-box; /* ensures padding doesn’t add extra size beyond defined overlay size */
@@ -63,14 +88,15 @@
     grid-row: 2;
     text-align: left;
     font-size: 0.5em;
+    color: var(--dark-grey);
     margin-top: 20px;
     display: flex;
 }
 .grid-container > subheader > div:nth-of-type(1) {
-    max-width: 100px;
+    flex: 1;    /* negative space on left */
 }
 .grid-container > subheader > div {
-    flex: 1;
+    flex: 8 ;
     border: var(--test-border);
 }
 /*                                                      CONTENT*/
@@ -78,22 +104,33 @@
     grid-row: 3;
     text-align: left;
     font-size: .8em;
-    line-height: 3em;
+    margin-top: -0.6em;
+    line-height: 2.6em;
     display: flex;
 }
 .grid-container > content > div:nth-of-type(1) {
-    max-width: 100px;
+    flex: 2;    /* negative space on left */
+}
+.grid-container > content > div:nth-of-type(4) {
+    flex: 1;    /* negative space on right */
 }
 .grid-container > content > div {
-    flex: 1;
-    flex-flow: column wrap;
+    flex: 3 auto;
     border: var(--test-border);
 }
-/*                                                      FOOTER*/
+/*                                                      FOOTER SEARCH BAR*/
 .grid-container > footer {
     grid-row: 4;
     display: grid;
     grid-template-columns: auto 1fr auto;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    background: var(--white);
+    border-radius: 0 0 10px 10px;
+    width: 100%;
+    padding: 6px;
+    box-sizing: border-box;
 }
 .grid-container > footer > label {
     font-size: 0.4em;

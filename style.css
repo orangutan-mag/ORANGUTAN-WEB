@@ -9,13 +9,15 @@
     --orange-tint: #ff5e0010;
     --white: #ffffff;
     --sheer-grey: #eeeeeed3;
-    --ultramarine: #0059ff;
+    --dark-grey: #5a5a5a;
+    --paleblue: #4696ff;
+    --ultramarine: #0046c7;
 
     /* TYPE */
     --font-h1: #000000;
 
     /* WIREFRAMING */
-    --test-border: 0.5px dotted #757575;
+    --test-border: 0px dotted #757575;
 }
 
 
@@ -27,7 +29,7 @@ html {
 
 body {
     background-color: var(--white);
-    font-family: Arial, sans-serif;
+    font-family: Times New Roman, serif;
     font-size: 25px;
 }
 
